@@ -1,0 +1,17 @@
+{
+  "name": "オセロゲーム Vintage",
+  "short_name": "オセロ",
+  "description": "落ち着いた色合いの本格オセロゲーム",
+  "start_url": "./index.html",
+  "display": "standalone",
+  "background_color": "#f7d7dc",
+  "theme_color": "#f7d7dc",
+  "icons": [
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    }
+  ]
+}
