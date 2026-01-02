@@ -1,5 +1,5 @@
 // バージョン管理：更新時はこの値を変更してください
-const CACHE_NAME = 'othello-v1';
+const CACHE_NAME = 'othello-v2';
 const ASSETS_TO_CACHE = [
   './',
   './index.html',

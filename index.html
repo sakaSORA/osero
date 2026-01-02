@@ -33,125 +33,47 @@
             touch-action: manipulation;
         }
 
-        h1 {
-            font-size: 2.2rem;
-            margin: 0 0 15px 0;
-            color: #2d3436;
-            text-shadow: 1px 1px 1px rgba(255,255,255,0.5);
-        }
-
-        #info {
-            width: 90%;
-            max-width: 400px;
-            text-align: center;
-        }
-
-        .selector-group {
-            display: flex;
-            justify-content: space-between;
-            gap: 8px;
-            margin-bottom: 12px;
-            width: 100%;
-        }
+        h1 { font-size: 2.2rem; margin: 0 0 15px 0; color: #000; text-shadow: 1px 1px 1px rgba(255,255,255,0.5); }
+        #info { width: 90%; max-width: 400px; text-align: center; }
+        .selector-group { display: flex; justify-content: space-between; gap: 8px; margin-bottom: 12px; width: 100%; }
 
         .btn {
-            flex: 1;
-            padding: 12px 0;
-            border: none;
-            background: rgba(255, 255, 255, 0.7);
-            color: #333;
-            border-radius: 12px;
-            font-size: 0.9rem;
-            font-weight: bold;
-            box-shadow: 0 4px 0px #b2bec3;
-            cursor: pointer;
-            transition: all 0.1s;
+            flex: 1; padding: 12px 0; border: none; background: rgba(255, 255, 255, 0.7);
+            color: #333; border-radius: 12px; font-size: 0.9rem; font-weight: bold;
+            box-shadow: 0 4px 0px #b2bec3; cursor: pointer; transition: all 0.1s;
         }
+        .btn:active { transform: translateY(2px); box-shadow: 0 2px 0px #b2bec3; }
+        .btn.active { background: #ff7675; color: white; box-shadow: 0 2px 0px #d63031; transform: translateY(2px); }
+        .control-btn { background: #fff; color: #e84393; box-shadow: 0 4px 0px #fab1a0; }
 
-        .btn:active {
-            transform: translateY(2px);
-            box-shadow: 0 2px 0px #b2bec3;
-        }
-
-        .btn.active {
-            background: #ff7675;
-            color: white;
-            box-shadow: 0 2px 0px #d63031;
-            transform: translateY(2px);
-        }
-
-        .control-btn {
-            background: #fff;
-            color: #e84393;
-            box-shadow: 0 4px 0px #fab1a0;
-        }
-
-        .status {
-            font-size: 1.1rem;
-            font-weight: bold;
-            margin-bottom: 5px;
-        }
-
-        .score-board {
-            display: flex;
-            justify-content: center;
-            gap: 30px;
-            margin-bottom: 10px;
-            font-weight: bold;
-        }
+        .status { font-size: 1.1rem; font-weight: bold; margin-bottom: 5px; }
+        .score-board { display: flex; justify-content: center; gap: 30px; margin-bottom: 10px; font-weight: bold; }
 
         #board {
-            display: grid;
-            grid-template-columns: repeat(8, 1fr);
-            grid-template-rows: repeat(8, 1fr);
-            background-color: var(--grid-line);
-            border: 10px solid var(--board-border);
-            border-radius: 6px;
-            padding: 1px;
-            gap: 1px;
-            width: 92vw;
-            height: 92vw;
-            max-width: 380px;
-            max-height: 380px;
-            box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+            display: grid; grid-template-columns: repeat(8, 1fr); grid-template-rows: repeat(8, 1fr);
+            background-color: var(--grid-line); border: 10px solid var(--board-border);
+            border-radius: 6px; padding: 1px; gap: 1px; width: 92vw; height: 92vw;
+            max-width: 380px; max-height: 380px; box-shadow: 0 15px 35px rgba(0,0,0,0.2);
         }
 
         .cell {
             background: radial-gradient(circle at center, var(--felt-light), var(--felt-green));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            position: relative;
+            display: flex; align-items: center; justify-content: center; position: relative;
         }
 
         .piece {
-            width: 85%; height: 85%; border-radius: 50%;
-            transform: scale(0); transition: transform 0.25s ease-out; z-index: 2;
+            width: 85%; height: 85%; border-radius: 50%; transform: scale(0);
+            transition: transform 0.25s ease-out; z-index: 2;
         }
-        .piece.black { 
-            background: var(--black-piece); 
-            transform: scale(1); 
-            box-shadow: 0 4px 0 #000, 2px 4px 10px rgba(0,0,0,0.5); 
-        }
-        .piece.white { 
-            background: var(--white-piece); 
-            transform: scale(1); 
-            box-shadow: 0 4px 0 #636e72, 2px 4px 8px rgba(0,0,0,0.2); 
-        }
+        .piece.black { background: var(--black-piece); transform: scale(1); box-shadow: 0 4px 0 #000, 2px 4px 10px rgba(0,0,0,0.5); }
+        .piece.white { background: var(--white-piece); transform: scale(1); box-shadow: 0 4px 0 #636e72, 2px 4px 8px rgba(0,0,0,0.2); }
 
         .cell.hint::after {
             content: ''; position: absolute; width: 18%; height: 18%; background-color: rgba(0,0,0,0.15); border-radius: 50%;
         }
 
         #message { margin-top: 15px; height: 1.2rem; font-weight: bold; color: #c0392b; }
-
-        .footer-controls {
-            display: flex;
-            width: 90%;
-            max-width: 400px;
-            gap: 10px;
-            margin-top: 15px;
-        }
+        .footer-controls { display: flex; width: 90%; max-width: 400px; gap: 10px; margin-top: 15px; }
     </style>
 </head>
 <body>
@@ -172,7 +94,6 @@
     </div>
 
     <div id="board"></div>
-
     <div id="message"></div>
 
     <div class="footer-controls">
@@ -182,12 +103,9 @@
     </div>
 
     <script>
-        // サービスワーカーの登録
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
-                navigator.serviceWorker.register('./sw.js')
-                .then(reg => console.log('SW registered'))
-                .catch(err => console.log('SW registration failed', err));
+                navigator.serviceWorker.register('./sw.js').catch(err => console.log(err));
             });
         }
 
@@ -197,9 +115,9 @@
             const osc = audioCtx.createOscillator();
             const gain = audioCtx.createGain();
             osc.frequency.setValueAtTime(450, audioCtx.currentTime);
-            osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.12);
+            osc.frequency.exponentialRampToValueAtTime(100, audioCtx.currentTime + 0.1);
             gain.gain.setValueAtTime(0.05, audioCtx.currentTime);
-            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.12);
+            gain.gain.exponentialRampToValueAtTime(0.01, audioCtx.currentTime + 0.1);
             osc.connect(gain); gain.connect(audioCtx.destination);
             osc.start(); osc.stop(audioCtx.currentTime + 0.12);
         }
@@ -223,8 +141,7 @@
         function setDiff(d) {
             difficulty = d;
             document.querySelectorAll('.diff-btn').forEach(b => b.classList.remove('active'));
-            const target = document.getElementById('diff' + d);
-            if(target) target.classList.add('active');
+            document.getElementById('diff' + d).classList.add('active');
             renderBoard();
         }
 
@@ -239,37 +156,26 @@
 
         function saveGame() {
             const gameState = { board, currentPlayer, difficulty };
-            localStorage.setItem('othello_save_v3', JSON.stringify(gameState));
+            localStorage.setItem('othello_save_v4', JSON.stringify(gameState));
             document.getElementById('message').textContent = "状態を保存しました";
-            setTimeout(() => { if(document.getElementById('message').textContent.includes("保存")) document.getElementById('message').textContent = ""; }, 1500);
+            setTimeout(() => { document.getElementById('message').textContent = ""; }, 1500);
         }
 
         function loadGame() {
-            const saved = localStorage.getItem('othello_save_v3');
+            const saved = localStorage.getItem('othello_save_v4');
             if (saved) {
                 const state = JSON.parse(saved);
                 board = state.board;
                 currentPlayer = state.currentPlayer;
                 difficulty = state.difficulty || 1;
                 setDiff(difficulty);
-                renderBoard();
-            } else {
-                initGame();
-            }
-        }
-
-        function exitGame() {
-            if (confirm("セーブして終了しますか？")) {
-                saveGame();
-                document.body.innerHTML = "<h2 style='color:#333; text-align:center; margin-top:50px;'>保存しました。ブラウザを閉じてください。</h2>";
-            }
+            } else { initGame(); }
         }
 
         function renderBoard() {
             const boardEl = document.getElementById('board');
-            if(!boardEl) return;
             boardEl.innerHTML = '';
-            let counts = {1: 0, 2: 0};
+            let bCount = 0, wCount = 0;
             for (let y = 0; y < 8; y++) {
                 for (let x = 0; x < 8; x++) {
                     const cell = document.createElement('div');
@@ -278,13 +184,13 @@
                     cell.onclick = () => userMove(x, y);
                     const piece = document.createElement('div');
                     piece.className = 'piece' + (board[y][x] === 1 ? ' black' : board[y][x] === 2 ? ' white' : '');
-                    if (board[y][x] !== 0) counts[board[y][x]]++;
+                    if (board[y][x] === 1) bCount++; else if (board[y][x] === 2) wCount++;
                     cell.appendChild(piece);
                     boardEl.appendChild(cell);
                 }
             }
-            document.getElementById('black-count').textContent = counts[1];
-            document.getElementById('white-count').textContent = counts[2];
+            document.getElementById('black-count').textContent = bCount;
+            document.getElementById('white-count').textContent = wCount;
             document.getElementById('turn-display').textContent = currentPlayer === 1 ? "あなたの番" : "相手の番";
         }
 
@@ -295,50 +201,74 @@
             playKomaSound();
             renderBoard();
             await new Promise(r => setTimeout(r, 600));
-            nextTurn();
+            checkNextTurn();
         }
 
-        function nextTurn() {
+        function checkNextTurn() {
             currentPlayer = 3 - currentPlayer;
             if (!hasValidMove(currentPlayer)) {
-                currentPlayer = 3 - currentPlayer;
-                if (!hasValidMove(currentPlayer)) {
-                    document.getElementById('message').textContent = "ゲーム終了！";
-                    isProcessing = false; renderBoard(); return;
+                // パス発生
+                const nextPlayer = 3 - currentPlayer;
+                if (!hasValidMove(nextPlayer)) {
+                    // 両者置けない＝終了
+                    endGame();
+                    return;
                 }
-                document.getElementById('message').textContent = "パス！";
-                setTimeout(() => { document.getElementById('message').textContent = ""; if(currentPlayer === 2) aiMove(); }, 800);
-            } else if (currentPlayer === 2) {
-                aiMove();
+                document.getElementById('message').textContent = (currentPlayer === 1 ? "あなた" : "相手") + "はパスです";
+                setTimeout(() => {
+                    document.getElementById('message').textContent = "";
+                    currentPlayer = nextPlayer;
+                    if (currentPlayer === 2) aiMove();
+                    else { isProcessing = false; renderBoard(); }
+                }, 1000);
             } else {
-                isProcessing = false;
+                if (currentPlayer === 2) aiMove();
+                else { isProcessing = false; renderBoard(); }
             }
-            renderBoard();
         }
 
         async function aiMove() {
+            isProcessing = true;
+            renderBoard();
             await new Promise(r => setTimeout(r, 800));
             let moves = [];
             for (let y = 0; y < 8; y++) {
                 for (let x = 0; x < 8; x++) {
                     if (canPlace(x, y, 2)) {
-                        let score = 0;
-                        if (difficulty === 1) score = Math.random();
-                        else if (difficulty === 2) score = getFlipCount(x, y, 2);
-                        else score = weightTable[y][x] + (getFlipCount(x, y, 2) * 2);
+                        let score = (difficulty === 1) ? Math.random() :
+                                    (difficulty === 2) ? getFlipCount(x, y, 2) :
+                                    weightTable[y][x] + (getFlipCount(x, y, 2) * 2);
                         moves.push({x, y, score});
                     }
                 }
             }
-            moves.sort((a, b) => b.score - a.score);
             if (moves.length > 0) {
+                moves.sort((a, b) => b.score - a.score);
                 executeMove(moves[0].x, moves[0].y, 2);
                 playKomaSound();
             }
-            isProcessing = false;
-            nextTurn();
+            renderBoard();
+            await new Promise(r => setTimeout(r, 400));
+            checkNextTurn();
         }
 
+        function endGame() {
+            isProcessing = true;
+            const b = parseInt(document.getElementById('black-count').textContent);
+            const w = parseInt(document.getElementById('white-count').textContent);
+            let res = (b > w) ? `黒の勝ち！ (${b}対${w})` : (w > b) ? `白の勝ち！ (${b}対${w})` : `引き分けです (${b}対${w})`;
+            alert("ゲーム終了！\n" + res);
+            document.getElementById('message').textContent = "ゲーム終了";
+        }
+
+        function exitGame() {
+            if (confirm("セーブして終了しますか？")) {
+                saveGame();
+                document.body.innerHTML = "<h2 style='text-align:center; margin-top:50px;'>保存しました。閉じてください。</h2>";
+            }
+        }
+
+        // 基本ルール
         const directions = [[-1,-1],[-1,0],[-1,1],[0,-1],[0,1],[1,-1],[1,0],[1,1]];
         function canPlace(x, y, color) {
             if (board[y][x] !== 0) return false;
